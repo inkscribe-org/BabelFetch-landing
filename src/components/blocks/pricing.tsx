@@ -35,18 +35,6 @@ const plans = [
       "Admin roles",
     ],
   },
-  {
-    name: "Enterprise",
-    monthlyPrice: "$8",
-    yearlyPrice: "$6",
-    features: [
-      "All free plan features and...",
-      "Mainline AI",
-      "Supermainline AGI",
-      "Free daily catered lunch",
-      "random HIPPA audits",
-    ],
-  },
 ];
 
 export const Pricing = ({ className }: { className?: string }) => {

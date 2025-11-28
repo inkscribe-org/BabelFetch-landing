@@ -6,13 +6,13 @@ import { cn } from "@/lib/utils";
 
 const topItems = [
   {
-    title: "Reusable issue templates.",
+    title: "Gemini SDK Foundation.",
     description:
-      "Draft lightning-fast documents with our Smart Instructions and Templates.",
+      "Built on Google's Gemini SDK for advanced AI capabilities and scalable agent creation.",
     images: [
       {
         src: "/resource-allocation/templates.webp",
-        alt: "Issue template interface",
+        alt: "Gemini SDK interface",
         width: 495,
         height: 186,
       },
@@ -22,37 +22,38 @@ const topItems = [
     fade: [""],
   },
   {
-    title: "Simplify your stack.",
-    description: "No more Confluence, SharePoint, or Microsoft Word.",
+    title: "Modular API Agents.",
+    description:
+      "Specialized agents work collaboratively to process queries and deliver results.",
     images: [
-      { src: "/logos/jira.svg", alt: "Jira logo", width: 48, height: 48 },
-      { src: "/logos/excel.svg", alt: "Excel logo", width: 48, height: 48 },
+      { src: "/logos/openai.svg", alt: "OpenAI logo", width: 48, height: 48 },
+      { src: "/logos/claude.svg", alt: "Claude logo", width: 48, height: 48 },
       {
-        src: "/logos/notion.svg",
-        alt: "Notion logo",
+        src: "/logos/perplexity.svg",
+        alt: "Perplexity logo",
         width: 48,
         height: 48,
       },
-      { src: "/logos/word.svg", alt: "Word logo", width: 48, height: 48 },
+      { src: "/logos/retool.svg", alt: "Retool logo", width: 48, height: 48 },
       {
-        src: "/logos/monday.svg",
-        alt: "Monday logo",
-        width: 48,
-        height: 48,
-      },
-      {
-        src: "/logos/drive.svg",
-        alt: "Google Drive logo",
+        src: "/logos/raycast.svg",
+        alt: "Raycast logo",
         width: 48,
         height: 48,
       },
       {
-        src: "/logos/jira.svg",
-        alt: "Jira logo",
+        src: "/logos/descript.svg",
+        alt: "Descript logo",
         width: 48,
         height: 48,
       },
-      { src: "/logos/asana.svg", alt: "Asana logo", width: 48, height: 48 },
+      {
+        src: "/logos/watershed.svg",
+        alt: "Watershed logo",
+        width: 48,
+        height: 48,
+      },
+      { src: "/logos/mercury.svg", alt: "Mercury logo", width: 48, height: 48 },
     ],
     className:
       "flex-1 [&>.title-container]:mb-5 md:[&>.title-container]:mb-8 md:[&>.title-container]:translate-x-2 xl:[&>.title-container]:translate-x-4 [&>.title-container]:translate-x-0",
@@ -62,13 +63,13 @@ const topItems = [
 
 const bottomItems = [
   {
-    title: "Graveyard it.",
+    title: "Query Processor.",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do.",
+      "Central agent that receives user queries and delegates tasks to specialized agents.",
     images: [
       {
         src: "/resource-allocation/graveyard.webp",
-        alt: "Graveyard interface",
+        alt: "Query processor interface",
         width: 305,
         height: 280,
       },
@@ -78,13 +79,13 @@ const bottomItems = [
     fade: ["bottom"],
   },
   {
-    title: "Task discussions.",
+    title: "Specialized Agents.",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.",
+      "Translation, Summarization, Action Item, Spam/Sentiment, and External Data agents.",
     images: [
       {
         src: "/resource-allocation/discussions.webp",
-        alt: "Task discussions interface",
+        alt: "Specialized agents interface",
         width: 320,
         height: 103,
       },
@@ -94,13 +95,13 @@ const bottomItems = [
     fade: [""],
   },
   {
-    title: "Notifications.",
+    title: "Collaborative Results.",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.",
+      "Agents compile and return final answers, transforming conversations into insights.",
     images: [
       {
         src: "/resource-allocation/notifications.webp",
-        alt: "Notifications interface",
+        alt: "Collaborative results interface",
         width: 305,
         height: 280,
       },
@@ -119,7 +120,7 @@ export const ResourceAllocation = () => {
     >
       <div className="">
         <h2 className="container text-center text-3xl tracking-tight text-balance sm:text-4xl md:text-5xl lg:text-6xl">
-          Mainline your resource allocation and execution
+          Agent-Centric Architecture with Gemini SDK
         </h2>
 
         <div className="mt-8 md:mt-12 lg:mt-20">

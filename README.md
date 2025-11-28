@@ -1,78 +1,58 @@
-# Mainline Next.js Template
+# BabelFetch
 
-Mainline is a free template built with shadcn/ui, Tailwind 4 and Next.js 15.
+Your intelligent assistant for managing and understanding complex online conversations.
 
-- [Demo](https://mainline-nextjs-template.vercel.app/)
-- [Documentation](https://docs.shadcnblocks.com/templates/getting-started)
-- [Figma](https://www.figma.com/design/cFCLMj7DFv0sK7EVsqKeTa/Mainline?node-id=23250-13201&t=I1nAdchDpknii5Bd-1)
+## The Problem
 
-![Mainline NextJS Template screenshot](./public/og-image.jpg)
+Instant messaging apps are a great way to communicate with friends, family, and colleagues. However, these platforms often lead to disorganized and overwhelming conversations. Important information gets buried, language barriers fragment communities, and spam or irrelevant messages increase the cognitive load of staying engaged. This makes it difficult to extract actionable insights or maintain meaningful connections.
 
-## Getting Started
+---
 
-```bash
-npm install
+## The Solution
+
+BabelFetch leverages the **Gemini SDK** and **API agents** to provide a seamless way to organize, translate, summarize, and query your messaging history. By combining the power of advanced AI models and modular API agents, BabelFetch transforms chaotic conversations into actionable insights, enabling users to interact with their messaging platforms intelligently and efficiently.
+
+---
+
+## High-Impact Features
+
+- **Real-Time Translation:** Instantly translate conversations into your preferred language.
+- **Intelligent Summarization:** Get concise summaries of lengthy discussions.
+- **Action Item Extraction:** Identify tasks, deadlines, and commitments from conversations.
+- **Spam & Sentiment Analysis:** Filter out irrelevant messages and gauge the overall sentiment of a discussion.
+- **Contextual Enrichment:** Enhance conversations with relevant external data, such as ratings, locations, or definitions.
+
+---
+
+## Agent-Centric Architecture with Gemini SDK
+
+BabelFetch is built on the **Gemini SDK**, which enables the creation of modular and scalable API agents. These agents work collaboratively to process user queries, leveraging specialized capabilities to deliver accurate and actionable results.
+
+```mermaid
+graph TD
+    subgraph User Interface
+        A[Web or Mobile App]
+    end
+
+    subgraph Gemini API Agents
+        B(Query Processor);
+        C(Translation Agent);
+        D(Summarization Agent);
+        E(Action Item Agent);
+        F(Spam/Sentiment Agent);
+        G(External Data Agent);
+    end
+
+    A -- 1. Sends Query --> B;
+    B -- 2. Delegates Tasks --> C;
+    B -- 2. Delegates Tasks --> D;
+    B -- 2. Delegates Tasks --> E;
+    B -- 2. Delegates Tasks --> F;
+    B -- 2. Delegates Tasks --> G;
+    C -- 3. Returns Result --> B;
+    D -- 3. Returns Result --> B;
+    E -- 3. Returns Result --> B;
+    F -- 3. Returns Result --> B;
+    G -- 3. Returns Result --> B;
+    B -- 4. Compiles & Sends Final Answer --> A;
 ```
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Features
-
-### Core Technology Stack
-
-- **Next.js 15** with App Router
-- **Tailwind CSS 4** for styling
-- **shadcn/ui** components
-- **TypeScript** support
-- **React 19**
-
-### Key Features
-
-- **Shadcn UI**: uses [shadcn/ui](https://ui.shadcn.com/) core UI components
-- **Theme System**: Dark/light mode with `next-themes`, compatible with [tweakcn](https://tweakcn.com)
-- **Form Handling**: React Hook Form + Zod validation
-- **Server Actions**: Next-safe-action integration for server-side logic
-- **MDX Support**: For content pages
-- **Animations**: Motion library (Framer Motion) integration
-- **ESLint/Prettier**: Pre-configured code formatting and linting
-- **Custom Fonts**: DM Sans font family included
-- **Icons**: Lucide React + React Icons libraries
-- **Styleglide Integration**: For component previews/development
-- **Responsive Design**: Mobile-friendly layout
-- **SEO Ready**: Proper metadata and OG images included
-
-### Pre-built Pages
-
-- Home/Landing page
-- About page
-- Pricing page
-- FAQ page
-- Contact page with form
-- Login/Signup pages
-
-### Blocks
-
-- Hero section
-- Logo showcase/marquee
-- Features section
-- Resource allocation section
-- Testimonials with carousel
-- Pricing table
-- FAQ with accordion
-- Footer
-- Navigation bar
-
-## Deployment
-
-Production-ready and tested for deployment on [Vercel](https://vercel.com)
-
-## Credits
-
-- Template by [shadcnblocks.com](https://shadcnblocks.com)
-- Design by [Callum Flack](https://x.com/callumflack)
-- Dev by [Yassine Zaanouni](https://x.com/YassineZaanouni)
-- Produced by [Rob Austin](https://x.com/ausrobdev)
