@@ -1,12 +1,13 @@
 "use client";
+
+import { useState } from "react";
+
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Check } from "lucide-react";
 import { motion } from "motion/react";
-import { useAction } from "next-safe-action/hooks";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
-import { serverAction } from "@/actions/server-action";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
@@ -42,20 +43,34 @@ export function ContactForm() {
       agree: false,
     } as unknown as Schema,
   });
-  const formAction = useAction(serverAction, {
-    onSuccess: () => {
-      // TODO: show success message
-      form.reset();
-    },
-    onError: () => {
-      // TODO: show error message
-    },
-  });
-  const handleSubmit = form.handleSubmit(async (data: Schema) => {
-    formAction.execute(data);
-  });
+  const [isExecuting, setIsExecuting] = useState(false);
+  const [hasSucceeded, setHasSucceeded] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const { isExecuting, hasSucceeded } = formAction;
+  const handleSubmit = form.handleSubmit(async (data: Schema) => {
+    setIsExecuting(true);
+    setError(null);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      const result = await response.json();
+      if (result.success) {
+        setHasSucceeded(true);
+        form.reset();
+      } else {
+        setError(result.message || "An error occurred");
+      }
+    } catch (err) {
+      setError(`Network error occurred: ${err instanceof Error ? err.message : 'Unknown error'}`);
+    } finally {
+      setIsExecuting(false);
+    }
+  });
   if (hasSucceeded) {
     return (
       <div className="w-full gap-2 rounded-md border p-2 sm:p-5 md:p-8">
@@ -95,6 +110,9 @@ export function ContactForm() {
         onSubmit={handleSubmit}
         className="flex w-full flex-col gap-2 space-y-4 rounded-md"
       >
+        {error && (
+          <div className="text-red-500 text-sm">{error}</div>
+        )}
         <FormField
           control={form.control}
           name="name"
