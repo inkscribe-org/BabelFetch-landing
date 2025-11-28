@@ -1,7 +1,5 @@
 import Link from "next/link";
 
-import { ArrowUpRight } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 
 export function Footer() {
@@ -12,8 +10,6 @@ export function Footer() {
     { name: "FAQ", href: "/faq" },
     { name: "Contact", href: "/contact" },
   ];
-
-  const social = [ ];
 
   const legal = [{ name: "Privacy Policy", href: "/privacy" }];
 
@@ -45,16 +41,6 @@ export function Footer() {
                 className="font-medium transition-opacity hover:opacity-75"
               >
                 {item.name}
-              </Link>
-            </li>
-          ))}
-          {social.map((item) => (
-            <li key={item.name}>
-              <Link
-                href={item.href}
-                className="flex items-center gap-0.5 font-medium transition-opacity hover:opacity-75"
-              >
-                {item.name} <ArrowUpRight className="size-4" />
               </Link>
             </li>
           ))}
